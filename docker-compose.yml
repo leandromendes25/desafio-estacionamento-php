@@ -1,0 +1,39 @@
+version: "3.7"
+
+services:
+    app:
+        build:
+            context: .docker/php/
+        container_name: app-estacionamento
+        volumes:
+            - ./:/var/www/html
+#            - ./.docker/php/xdebug.ini:/usr/local/etc/php/conf.d/local.ini
+        ports:
+            - "9000:9000"
+        depends_on:
+            - nginx
+            - db
+    nginx:
+        container_name: nginx-estacionamento
+        image: nginx:latest
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - ./:/var/www/html
+            - .docker/nginx/:/etc/nginx/conf.d
+
+    db:
+        image: mysql:latest
+        command: --innodb-use-native-aio=0
+        container_name: db-estacionamento
+        restart: always
+        volumes:
+            -   ./.docker/mysql/:/var/lib/mysql
+        tty: true
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_DATABASE=php
+            - MYSQL_USER=leandro
+            - MYSQL_PASSWORD=1234

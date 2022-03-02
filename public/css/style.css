@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Dark-siena: #53131e;
+    --Purple: #52489c;
+    --Granny: #C4FFB2;
+    --Blue: #6F9CEB;
+    --Maximum-blue: #48B8D0;
+    --Pine-tree: #1F271B;
+    --Header-back: #0F1020;
+}
+
+body {
+    background: var(--Pine-tree);
+}
+
+body, html {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: var(--Maximum-blue);
+    position: relative;
+    display: inline-block;
+    height: 1.3rem;
+}
+
+li a::after {
+    bottom: 0;
+    content: "";
+    background: #fff;
+    height: 2px;
+    display: block;
+    width: 0;
+    position: absolute;
+    transition: width 0.2s;
+}
+
+li a:hover::after {
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    margin: 0 1rem 0;
+}
+
+nav ul {
+    display: flex;
+    margin-top: 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 4rem 1rem;
+    color: var(--Maximum-blue);
+    background: var(--Header-back);
+}
+
+.container {
+    height: 88%;
+    width: 100%;
+
+}
+
+.container main {
+    width: 100%;
+    height: 100%;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.redirect {
+    padding: 1.5rem;
+    bottom: -2rem;
+    line-height: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    background: white;
+}
+
+.main-title {
+    color: var(--Maximum-blue);
+    font-size: 50px;
+    text-align: center;
+    width: 50%;
+}
+/*Pagina login*/
+.login-container{
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.login-container img{
+    width: 100%;
+    height: 100%;
+}
+.form-login{
+    padding: 2rem;
+    background: rgba(0,0,0,0.3);
+    width: 30%;
+    color: white;
+    position: absolute;
+}
+.form-login div{
+    display: flex;
+    width: 27%;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.form-login div a::after{
+    content: '';
+    position: absolute;
+    background: white;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 2px;
+}
+.form-login div a:hover::after{
+    width: 100%;
+    transition: width 1s;
+}
+
+.campo-user{
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+.campo-user a {
+    color: white;
+}
+.campo-user label{
+    padding: 0.5rem 0rem;
+}
+.campo-user input{
+    padding: 0.2rem;
+    width: 70%;
+}
+label span{
+    display: block;
+}
+.login-btn{
+    padding: 0.5rem;
+    width: 60%;
+    align-self: center;
+    background: var(--Maximum-blue);
+    border: none;
+    color: white;
+    font-weight: 700;
+    margin: 1rem 0 1rem;
+
+}
+.campo-user a{
+    align-self: center;
+}
+.footer-content{
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
